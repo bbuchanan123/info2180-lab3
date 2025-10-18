@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     squares.forEach((square, index) => {
         square.classList.add("square");
         square.addEventListener("click", function() {
-            if (!square.textContent && !checkWinner()) {
+            if (!gameState[index] && !checkWinner()) {
                 square.textContent = currentPlayer;
                 square.classList.add(currentPlayer);
                 gameState[index] = currentPlayer;
