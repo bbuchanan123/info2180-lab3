@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     squares.forEach((square, index) => {
         square.classList.add("square");
-        
+
         square.addEventListener("click", function() {
             // Only allow clicking if the square is empty
             if (!square.textContent) {
@@ -23,6 +23,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Switch players
                 currentPlayer = currentPlayer === "X" ? "O" : "X";
             }
+        });
+
+        square.addEventListener("mouseover", function() {
+            square.classList.add("hover");
+        });
+
+        // 🔹 Handle mouseout
+        square.addEventListener("mouseout", function() {
+            square.classList.remove("hover");
         });
     });
 });
